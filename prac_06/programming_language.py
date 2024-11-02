@@ -2,7 +2,7 @@
 Estimate:25 minutes
 Actual:38 minutes
 """
-from prac_06.language import visual_basic, python, ruby
+
 
 
 class ProgrammingLanguage:
@@ -13,7 +13,7 @@ class ProgrammingLanguage:
         self.year = year
 
     def is_dynamic(self):
-        return self.typing == "dynamic"
+        return self.typing == "Dynamic"
 
     def __str__(self):
         return f"{self.name},{self.typing} typing, reflection= {self.reflection},First appeared in {self.year}."
