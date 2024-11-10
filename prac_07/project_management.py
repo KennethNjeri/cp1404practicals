@@ -47,10 +47,6 @@ def main():
     print("Thank you for using custom -built project management software!")
 
 
-
-
-
-
 def load_projects(filename):
     projects = []
     with open(filename, 'r') as file:
@@ -98,6 +94,10 @@ def filter_projects_by_date(projects, date):
 def add_new_project(projects):
     print("Lets add a new project")
     name = input("Project name: ")
+    while name == "":
+        print("Name cannot be blank.")
+        name = input("Project name: ")
+
     start_date = input("Start date (dd/mm/yyyy): ")
     date = datetime.datetime.strptime(start_date, "%d/%m/%Y").date()
     priority = int(input("Priority: "))
