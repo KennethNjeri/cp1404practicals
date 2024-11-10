@@ -2,7 +2,7 @@ import datetime
 from prac_07.project import Project
 """
 Estimate:2 hours
-Actual: 
+Actual: 2 hrs 47 minutes
 """
 
 
