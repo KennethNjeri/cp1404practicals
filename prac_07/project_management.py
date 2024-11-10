@@ -48,6 +48,7 @@ def main():
 
 
 def load_projects(filename):
+    """Load projects from file"""
     projects = []
     with open(filename, 'r') as file:
         for line in file:
@@ -59,12 +60,14 @@ def load_projects(filename):
     return projects
 
 def save_projects(filename, projects):
+    """Save projects to file"""
     with open(filename, 'w') as file:
         for project in projects:
             file.write(f"{project.name}, {project.start_date}, {project.priority}\n")
 
 
 def display_projects(projects):
+    """Display sorted incomplete and complete projects"""
     incomplete_projects = []
     complete_projects = []
     for project in projects:
@@ -83,6 +86,7 @@ def display_projects(projects):
         print(project)
 
 def filter_projects_by_date(projects, date):
+    """Filter projects by date"""
     filtered_projects = []
     for project in projects:
         if project.start_date >= date:
@@ -92,6 +96,7 @@ def filter_projects_by_date(projects, date):
         print(project)
 
 def add_new_project(projects):
+    """Add new project"""
     print("Lets add a new project")
     name = input("Project name: ")
     while name == "":
@@ -106,6 +111,7 @@ def add_new_project(projects):
     projects.append(project)
 
 def update_project(projects):
+    """Update project details"""
     for index, project in enumerate(projects):
         print(f"{index + 1}. {project.name}, {project.start_date}, {project.priority}, {project.completion_percentage}")
     project_index = int(input("Project choice: ")) - 1
