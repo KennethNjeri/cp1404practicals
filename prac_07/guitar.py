@@ -19,19 +19,6 @@ class Guitar:
         return self.get_age() >= VINTAGE
 
     def __lt__(self, other):
-        return self.get_age() < other.get_age()
+        return self.year < other.year
 
 
-def main():
-    guitars = []
-    in_file = open("guitars.csv", "r")
-    for line in in_file:
-        parts = line.strip().split(",")
-        guitar = Guitar(parts[0], int(parts[1]), float(parts[2]))
-        guitars.append(guitar)
-    in_file.close()
-
-    for guitar in guitars:
-        print(guitar)
-
-main()
