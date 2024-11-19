@@ -20,7 +20,7 @@ class MilesConverterApp(App):
             kilometres = miles * MILES_TO_KM
             self.root.ids.output_label.text = str(kilometres)
         except ValueError:
-            self.root.ids.output_label.text = "Invalid input"
+            self.root.ids.output_label.text = "0.0"
 
     def handle_increment(self, increment):
         try:
@@ -30,7 +30,7 @@ class MilesConverterApp(App):
         except ValueError:
             self.root.ids.output_label.text = "0.0"
 
-    def handle_update(self, delta):
+    def handle_update(self):
         self.message = self.root.ids.output_label.text
 
 MilesConverterApp().run()
